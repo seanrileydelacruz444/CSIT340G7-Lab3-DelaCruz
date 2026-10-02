@@ -1,26 +1,33 @@
-import NavBar from "./components/NavBar";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
-import AboutSection from "./components/AboutSection";
-import SkillSection from "./components/SkillSection";
-import ProjectSection from "./components/ProjectSection";
-import ExperienceSection from "./components/ExperienceSection";
-import ContactSection from "./components/ContactSection";
+import Content from "./components/Content.jsx"
+import Header from "./components/Header.jsx"
+import TotalUnits from "./components/TotalUnits.jsx"
+import Name from "./components/Name.jsx"
 
-function App() {
-  return (
-    <>
-      <NavBar />
-      <Hero />
-      <AboutSection />
-      <SkillSection/>
-      <ProjectSection/>
-      <ExperienceSection/>
-      <ContactSection/>
-      <Footer/>
-    </>
-  );
+const App = () => {
+    const fullName = 'Sean Riley Dela Cruz'
+    const courseCode = 'CSIT 340'
+    const section = 'G7'
+
+    const course = {
+        name: 'BS in Information Technology',
+
+        parts: [
+            {name: 'Industry Elective 1 ', units: 3},
+            {name: 'Project Management ', units: 3},
+            {name: 'Data Analytics ', units: 3} 
+        ]
+    }
+
+    
+    
+    return(
+        <>
+            <Header course = {course.name} />
+            <Content parts = {course.parts} />
+            <TotalUnits parts = {course.parts} />
+            <Name name = {fullName} courseCode={courseCode} section = {section}/>
+        </>
+    );
 }
 
-
-export default App;
+export default App
